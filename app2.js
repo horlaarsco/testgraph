@@ -41,10 +41,13 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-mongoose.connect("mongodb://localhost:27017/myapp", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://horlaarsco:bukola99@cluster0-eirda.mongodb.net/ecom?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 server.listen({ port: process.env.PORT }).then(({ url }) => {
   console.log(`Server ready at ${url}`);
